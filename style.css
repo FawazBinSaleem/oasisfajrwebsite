@@ -17,6 +17,12 @@ body{
 
 }
 
+
+.custom-link {
+    color: orange;
+    text-decoration: none;
+}
+
 .centre-container{
     display: flex;
     flex-direction: column;
