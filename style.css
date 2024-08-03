@@ -177,7 +177,7 @@ nav li:first-child{
          flex-direction: column;
     }
 }
- @media(max-width:1300px)  {
+ @media(max-width:1279px)  {
     .hideOnMobile{
         display:none;
     }
