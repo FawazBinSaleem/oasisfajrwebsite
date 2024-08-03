@@ -18,10 +18,7 @@ body{
 }
 
 
-.custom-link {
-    color: orange;
-    text-decoration: none;
-}
+
 
 .centre-container{
     display: flex;
@@ -166,10 +163,10 @@ nav li:first-child{
     width: 100%;
 }
 
-        /* CSS styles go here */
+        
     .custom-bullets {
          list-style-type: disc; /* Default bullet points */
-         padding-left: 30px; /* Optional: Adjusts left padding for better alignment */
+         padding-left: 30px; /* Adjusts left padding for better alignment */
     }
 
 
@@ -178,12 +175,31 @@ nav li:first-child{
 }    
 
 
+.contact-details {
+    display: grid;
+    grid-template-columns: 1fr;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 10px; /* Adjust spacing as needed */
+}
+
+.contact-details p, .contact-details h3 {
+    margin: 0;
+    font-size: 1.17em;
+}
+
+.custom-link {
+    color: orange;
+    text-decoration: none;
+}
+
 @media(max-width:768px){
     .photo-gallery{
          flex-direction: column;
     }
 }
- @media(max-width:1279px)  {
+
+@media(max-width:1279px)  {
     .hideOnMobile{
         display:none;
     }
@@ -191,4 +207,4 @@ nav li:first-child{
     .menuButton{
         display: block;
     }
- } 
+} 
