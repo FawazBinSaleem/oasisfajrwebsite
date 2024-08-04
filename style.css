@@ -8,6 +8,7 @@
 body{
     min-height: 100vh;
 }
+
 .header{
     height: 15vh;
     width: 100%;
@@ -17,7 +18,20 @@ body{
 
 }
 
-
+.centre-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    
+}
+.container .title{
+    font-size: 25px;
+    color: black;
+    margin-bottom: 10px;
+    text-align: center;
+}
 
 .container{
     max-width: 85%;
@@ -25,7 +39,7 @@ body{
 }
 
 .container .photo-gallery{
-    columns: 4 250px;
+    columns: 4 200px;
     gap:15px
 }
 
@@ -36,38 +50,30 @@ body{
 
 }
 
-
-
-.centre-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 10vh;
-    
-}
-
-
-
 .title{
     margin-bottom: 2rem;
 }
+
+
+
 
 
 .centre-container a{
     text-decoration: none;
 }
 
+
 .intro-button{
     background-color: orange;
     color:black;
     border: none;
-    height: 36px;
+    height: 50px;
     width: 105px;
     border-radius:20px;
     cursor: pointer;
     margin-right: 10px;
     display: flex;
+    margin-top: 50px;
     justify-content: center;
     align-items: center;
     }
@@ -132,6 +138,7 @@ nav li:first-child{
 
 
 .content{
+    margin-top: 35px;
     text-align: center;
     color: black;
     
@@ -161,16 +168,15 @@ nav li:first-child{
 }
 
         
-    .custom-bullets {
-         list-style-type: disc; /* Default bullet points */
-         padding-left: 30px; /* Adjusts left padding for better alignment */
-    }
+.custom-bullets {
+     list-style-type: disc; /* Default bullet points */
+     padding-left: 30px; /*  Adjusts left padding for better alignment */
+}
 
 
 .menuButton{
     display:none;
 }    
-
 
 .contact-details {
     display: grid;
@@ -196,7 +202,7 @@ nav li:first-child{
     }
 }
 
-@media(max-width:1279px)  {
+ @media(max-width:1279px)  {
     .hideOnMobile{
         display:none;
     }
@@ -204,4 +210,4 @@ nav li:first-child{
     .menuButton{
         display: block;
     }
-} 
+ } 
