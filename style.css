@@ -120,7 +120,7 @@ nav li:first-child{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;  /* Adjust this value as needed */
+   
 }
 
 
@@ -133,7 +133,7 @@ nav li:first-child{
 
 
 .content{
-    margin-top: 30px;
+    margin-top: 25px;
     text-align: center;
     color: black;
     
