@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Leading construction and contracting in Riyadh and Saudi Arabia since 2001, OASIS FAJR (OFE) delivers top-quality projects with unwavering excellence and trust.">
+    <meta name="keywords" content="construction, contract, Riyadh, Saudi Arabia, contracting, civil engineering">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/media/favicontrans.png">
+    <title>Oasis Fajr's Vision</title>
+    <link href="../styles/style.css" rel="stylesheet" type ="text/css">
+</head>
+<body>
+    <div>
+        <nav>
+            <ul>
+                <li><a aria-label="home" href="../">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#000000"><path d="M240-200h120v-240h240v240h120v-360L480-740 240-560v360Zm-80 80v-480l320-240 320 240v480H520v-240h-80v240H160Zm320-350Z"/></svg></a>
+                </li>
+                <li class="hideOnMobile"><a href="../components/index">Introduction</a></li>
+                <li class="hideOnMobile"><a href="../components/CompanyInfo">Company Information</a></li>
+                <li class="hideOnMobile"><a href="../components/vision">Vision & Mission</a></li>
+                <li class="hideOnMobile"><a href="../components/Organization">Organizational Chart</a></li>
+                <li class="hideOnMobile"><a href="../components/specialization">Specialization</a></li>
+                <li class="hideOnMobile"><a href="../components/project">Projects</a></li>
+                <li class="hideOnMobile"><a href="../components/safety">Safety & Quality</a></li>
+                <li class="hideOnMobile"><a href="../components/gallery">Gallery</a></li>
+                <li class="hideOnMobile"><a href="../components/contact">Contact</a></li>
+                <li class="menuButton" onclick="showSidebar()"><a href="#" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="26" viewBox="0 -960 960 960" width="26" fill="#000000"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a>
+                </li>
+            </ul>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a aria-label="close" href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#000000"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="../components/Introduction">Introduction</a></li>
+                <li><a href="../components/CompanyInfo">Company Information</a></li>
+                <li><a href="../components/vision">Vision & Mission</a></li>
+                <li><a href="../components/Organization">Organizational Chart</a></li>
+                <li><a href="../components/specialization">Specialization</a></li>
+                <li><a href="../components/project">Projects</a></li>
+                <li><a href="../components/safety">Safety & Quality</a></li>
+                <li><a href=".//gallery">Gallery</a></li>
+                <li><a href="../components/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+
+<main>
+    <div class="content">
+        <h3>VISION</h3>
+        <p>We aspire to become professionally organized Construction Company 
+            of choice to cater to the need of the construction industry in general.</p>
+        <br>
+        <h1>DREAM IT AND WE BUILD IT!</h1>
+        <br>
+    </div>        
+        <h3>Our Mission?</h3>    
+        <ul class="custom-bullets">
+            <li>We will promote uncompromising quality and integrity in the services that we render,
+            with the utmost safe working environment.</li>
+            <li>We are committed to provide the highest quality of workmanship,without compromising 
+                on safety and at competitive pricing, 
+                to the expectation of the Client.</li>
+            <li>We will create opportunities to achieve the extra ordinary, quality,
+                as we build a better quality of life for our people.</li>
+        </ul>
+    
+    
+</main>
+<script>
+    function showSidebar(){
+        const sidebar=document.querySelector('.sidebar')
+        sidebar.style.display='flex'
+    }
+
+   function hideSidebar(){
+    const sidebar=document.querySelector('.sidebar')
+    sidebar.style.display="none"
+   }  
+</script>
+</body>
+
+</html>
