@@ -12,36 +12,25 @@ export function SiteFooter() {
             className="h-12 w-auto"
           />
           <p className="mt-4 max-w-xs text-sm text-ink-foreground/70">
-            {company.name} — building across the {company.country} since {company.founded}.
+            {company.name} - building across the {company.country} since{" "}
+            {company.founded}.
           </p>
-        </div>
-
-        <div>
-          <p className="eyebrow text-ink-foreground/50">Navigate</p>
-          <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2">
-            {nav.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="text-sm text-ink-foreground/75 transition-colors hover:text-primary"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
         </div>
 
         <div>
           <p className="eyebrow text-ink-foreground/50">Get in touch</p>
           <div className="mt-4 space-y-2 text-sm text-ink-foreground/75">
-            <p>{company.operationManager} — Operation Manager</p>
+            <p>{company.operationManager} - Operation Manager</p>
             <p>
               <a href={`tel:${company.phone}`} className="hover:text-primary">
                 {company.phone}
               </a>
             </p>
             <p className="break-all">
-              <a href={`mailto:${company.email}`} className="hover:text-primary">
+              <a
+                href={`mailto:${company.email}`}
+                className="hover:text-primary"
+              >
                 {company.email}
               </a>
             </p>
