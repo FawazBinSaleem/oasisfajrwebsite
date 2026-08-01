@@ -1,8 +1,10 @@
-name: Deploy TanStack site to GitHub Pages
+name: Deploy website to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+
   workflow_dispatch:
 
 permissions:
@@ -11,7 +13,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: github-pages
   cancel-in-progress: true
 
 jobs:
@@ -22,7 +24,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Node.js
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -31,37 +33,42 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and prerender site
+      - name: Build and prerender website
         run: npm run build
 
-      - name: Verify GitHub Pages output
+      - name: Verify static output
         run: |
-          test -f .output/public/index.html
-          echo "Found .output/public/index.html"
+          test -f dist/client/index.html
+          test -f dist/client/company/index.html
+          test -f dist/client/contact/index.html
+          test -f dist/client/gallery/index.html
+          test -f dist/client/introduction/index.html
+          test -f dist/client/organization/index.html
+          test -f dist/client/projects/index.html
+          test -f dist/client/safety/index.html
+          test -f dist/client/specialization/index.html
+          test -f dist/client/vision/index.html
 
-      - name: Add custom domain file
-        run: |
-          printf '%s\n' 'oasisfajircontracting.com' > .output/public/CNAME
-
-      - name: Add Pages 404 fallback
-        run: cp .output/public/index.html .output/public/404.html
+      - name: Add GitHub Pages 404 fallback
+        run: cp dist/client/index.html dist/client/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload Pages artifact
+      - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: dist/client
 
   deploy:
-    needs: build
-    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
+    needs: build
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
