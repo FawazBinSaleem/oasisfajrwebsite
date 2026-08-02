@@ -56,41 +56,41 @@
   --font-heading: "Archivo", system-ui, sans-serif;
   --font-body: "Barlow", system-ui, sans-serif;
 
-  --background: #F7F4EE;
+  --background: #f7f4ee;
   --foreground: #191714;
-  --card: #FFFFFF;
+  --card: #ffffff;
   --card-foreground: #191714;
-  --popover: #FFFFFF;
+  --popover: #ffffff;
   --popover-foreground: #191714;
 
-  --primary: #E8890C;
-  --primary-dark: #C96F00;
+  --primary: #e8890c;
+  --primary-dark: #c96f00;
   --primary-foreground: #191714;
-  --secondary: #EDE4D6;
+  --secondary: #ede4d6;
   --secondary-foreground: #191714;
-  --muted: #EFEBE3;
-  --muted-foreground: #6F6961;
-  --accent: #EDE4D6;
+  --muted: #efebe3;
+  --muted-foreground: #6f6961;
+  --accent: #ede4d6;
   --accent-foreground: #191714;
   --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: #FFFFFF;
+  --destructive-foreground: #ffffff;
 
   --ink: #191714;
-  --ink-foreground: #F7F4EE;
-  --sand: #EDE4D6;
+  --ink-foreground: #f7f4ee;
+  --sand: #ede4d6;
 
-  --border: #D8D1C8;
-  --input: #D8D1C8;
-  --ring: #C96F00;
+  --border: #d8d1c8;
+  --input: #d8d1c8;
+  --ring: #c96f00;
 
-  --sidebar: #F7F4EE;
+  --sidebar: #f7f4ee;
   --sidebar-foreground: #191714;
-  --sidebar-primary: #E8890C;
+  --sidebar-primary: #e8890c;
   --sidebar-primary-foreground: #191714;
-  --sidebar-accent: #EDE4D6;
+  --sidebar-accent: #ede4d6;
   --sidebar-accent-foreground: #191714;
-  --sidebar-border: #D8D1C8;
-  --sidebar-ring: #C96F00;
+  --sidebar-border: #d8d1c8;
+  --sidebar-ring: #c96f00;
 }
 
 .dark {
@@ -162,7 +162,8 @@
 }
 
 @utility grid-lines {
-  background-image: linear-gradient(
+  background-image:
+    linear-gradient(
       to right,
       color-mix(in oklab, var(--color-foreground) 6%, transparent) 1px,
       transparent 1px

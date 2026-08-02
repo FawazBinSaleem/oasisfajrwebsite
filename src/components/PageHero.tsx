@@ -36,7 +36,9 @@ export function PageHero({
             {intro}
           </p>
         )}
-        {children && <div className="mt-8 flex flex-wrap gap-3">{children}</div>}
+        {children && (
+          <div className="mt-8 flex flex-wrap gap-3">{children}</div>
+        )}
       </div>
     </section>
   );
@@ -52,7 +54,10 @@ export function Section({
   id?: string;
 }) {
   return (
-    <section id={id} className={`mx-auto max-w-7xl px-5 py-14 lg:px-8 lg:py-20 ${className}`}>
+    <section
+      id={id}
+      className={`mx-auto max-w-7xl px-5 py-14 lg:px-8 lg:py-20 ${className}`}
+    >
       {children}
     </section>
   );

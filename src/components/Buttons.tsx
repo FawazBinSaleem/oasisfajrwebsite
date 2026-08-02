@@ -17,10 +17,25 @@ type BaseProps = {
 const base =
   "inline-flex items-center justify-center gap-2 px-6 py-3 text-xs font-bold uppercase tracking-[0.16em] transition-colors duration-200";
 
-function Shell({ to, hash, href, onClick, type, className, children, ...rest }: BaseProps & { className: string }) {
+function Shell({
+  to,
+  hash,
+  href,
+  onClick,
+  type,
+  className,
+  children,
+  ...rest
+}: BaseProps & { className: string }) {
   if (to) {
     return (
-      <Link to={to} {...(hash ? { hash } : {})} className={className} onClick={onClick} {...rest}>
+      <Link
+        to={to}
+        {...(hash ? { hash } : {})}
+        className={className}
+        onClick={onClick}
+        {...rest}
+      >
         {children}
       </Link>
     );
@@ -33,7 +48,12 @@ function Shell({ to, hash, href, onClick, type, className, children, ...rest }: 
     );
   }
   return (
-    <button type={type ?? "button"} className={className} onClick={onClick} {...rest}>
+    <button
+      type={type ?? "button"}
+      className={className}
+      onClick={onClick}
+      {...rest}
+    >
       {children}
     </button>
   );
@@ -52,5 +72,7 @@ export function SecondaryButton(props: BaseProps & { onDark?: boolean }) {
   const tone = props.onDark
     ? "border border-ink-foreground/35 text-ink-foreground hover:border-primary hover:text-primary"
     : "border border-border text-foreground hover:border-primary hover:text-primary-dark";
-  return <Shell {...props} className={`${base} ${tone} ${props.className ?? ""}`} />;
+  return (
+    <Shell {...props} className={`${base} ${tone} ${props.className ?? ""}`} />
+  );
 }

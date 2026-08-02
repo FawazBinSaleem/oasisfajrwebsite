@@ -4,7 +4,13 @@ import { X } from "lucide-react";
 import { mainNav } from "@/data/navigation";
 import { company } from "@/data/company";
 
-export function MobileNavigation({ open, onClose }: { open: boolean; onClose: () => void }) {
+export function MobileNavigation({
+  open,
+  onClose,
+}: {
+  open: boolean;
+  onClose: () => void;
+}) {
   const panelRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -71,7 +77,9 @@ export function MobileNavigation({ open, onClose }: { open: boolean; onClose: ()
           Request a Consultation
         </Link>
         <a
-          href={company.whatsapp} target="_blank" rel="noreferrer"
+          href={company.whatsapp}
+          target="_blank"
+          rel="noreferrer"
           className="mt-3 block text-center text-sm text-ink-foreground/70"
         >
           {company.phoneDisplay}

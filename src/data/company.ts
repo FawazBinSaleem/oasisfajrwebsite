@@ -151,7 +151,45 @@ export const quality = {
     "Management communicates this policy to all employees and staff so that it is properly understood and followed.",
   ],
 };
-
+export const maintenanceSupport = {
+  eyebrow: "Maintenance support",
+  title: "Professional maintenance support services",
+  intro:
+    "Oasis Fajr Contracting provides strong and reliable maintenance support services to clients across Riyadh. Our experienced and skilled trade workers ensure efficient execution, quality workmanship, and timely response for all maintenance requirements.",
+  services: [
+    {
+      title: "Electrical Maintenance",
+      detail: "Immediate emergency support and troubleshooting.",
+    },
+    {
+      title: "HVAC Maintenance",
+      detail: "Repair, inspection, and preventive maintenance services.",
+    },
+    {
+      title: "General Construction Works",
+      detail: "Civil, finishing, and maintenance support services.",
+    },
+    {
+      title: "Skilled Trade Workers",
+      detail: "Experienced and qualified technical manpower.",
+    },
+  ],
+  responseIntro:
+    "Once a complaint inquiry or work execution ticket is received from our clients by phone or email, our maintenance team immediately initiates the response process.",
+  response: [
+    {
+      type: "Electrical & HVAC emergency tasks",
+      time: "Within 2 hours (inside Riyadh)",
+    },
+    {
+      type: "General maintenance services",
+      time: "Within the next working day",
+    },
+  ],
+  coverage:
+    "Our maintenance support services are arranged within Riyadh City. For maintenance contract support required outside Riyadh, special arrangements and mobilization plans are organized to meet client requirements efficiently and professionally.",
+  commitment: "Committed to quality, safety and timely service delivery.",
+};
 export const organization = [
   {
     level: "General Management",

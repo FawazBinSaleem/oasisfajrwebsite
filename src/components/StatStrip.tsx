@@ -2,7 +2,10 @@ import { stats } from "@/data/company";
 
 export function StatStrip() {
   return (
-    <section className="border-y border-border bg-sand" aria-label="Company facts">
+    <section
+      className="border-y border-border bg-sand"
+      aria-label="Company facts"
+    >
       <dl className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 px-5 sm:grid-cols-2 lg:grid-cols-4 lg:px-8">
         {stats.map((s) => (
           <div key={s.label} className="py-8 lg:py-12">

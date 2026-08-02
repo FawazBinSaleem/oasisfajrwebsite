@@ -34,7 +34,9 @@ const statuses = ["Ongoing", "Completed"] as const;
 
 function ProjectsPage() {
   const [category, setCategory] = useState<ProjectCategory | "All">("All");
-  const [status, setStatus] = useState<(typeof statuses)[number] | "All">("All");
+  const [status, setStatus] = useState<(typeof statuses)[number] | "All">(
+    "All",
+  );
   const [active, setActive] = useState<Project | null>(null);
 
   const filtered = useMemo(
@@ -85,7 +87,12 @@ function ProjectsPage() {
         ) : (
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((p, i) => (
-              <ProjectCard key={p.slug} project={p} onSelect={setActive} priority={i < 3} />
+              <ProjectCard
+                key={p.slug}
+                project={p}
+                onSelect={setActive}
+                priority={i < 3}
+              />
             ))}
           </div>
         )}
@@ -118,7 +125,9 @@ function ProjectsPage() {
                 {active.status} · {active.location}
               </p>
               <h2 className="mt-2 text-2xl">{active.title}</h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{active.summary}</p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+                {active.summary}
+              </p>
               {active.scope.length > 0 && (
                 <ul className="mt-6 flex flex-wrap gap-2">
                   {active.scope.map((s) => (

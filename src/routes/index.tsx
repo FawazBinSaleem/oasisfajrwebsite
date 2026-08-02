@@ -30,11 +30,19 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "https://oasisfajircontracting.com/" },
-      { property: "og:image", content: "https://oasisfajircontracting.com/media/IMG-20190409-WA0022.jpg" },
+      {
+        property: "og:image",
+        content:
+          "https://oasisfajircontracting.com/media/IMG-20190409-WA0022.jpg",
+      },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
-      { name: "twitter:image", content: "https://oasisfajircontracting.com/media/IMG-20190409-WA0022.jpg" },
+      {
+        name: "twitter:image",
+        content:
+          "https://oasisfajircontracting.com/media/IMG-20190409-WA0022.jpg",
+      },
     ],
     links: [{ rel: "canonical", href: "https://oasisfajircontracting.com/" }],
     scripts: [
@@ -71,7 +79,10 @@ function HomePage() {
           fetchPriority="high"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40" aria-hidden="true" />
+        <div
+          className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40"
+          aria-hidden="true"
+        />
         <div className="relative mx-auto max-w-7xl px-5 py-20 sm:py-28 lg:px-8 lg:py-36">
           <p className="eyebrow text-primary">{heroCopy.eyebrow}</p>
           <h1 className="mt-5 max-w-4xl text-[2.5rem] leading-[1.02] sm:text-6xl lg:text-7xl">
@@ -84,7 +95,8 @@ function HomePage() {
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
             <PrimaryButton to="/projects">
-              View Our Projects <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              View Our Projects{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </PrimaryButton>
             <SecondaryButton to="/contact" onDark>
               Request a Consultation
@@ -99,7 +111,10 @@ function HomePage() {
       <section className="mx-auto max-w-7xl px-5 py-16 lg:px-8 lg:py-24">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
           <div>
-            <SectionHeading eyebrow="Who we are" title="Built on experience. Driven by quality." />
+            <SectionHeading
+              eyebrow="Who we are"
+              title="Built on experience. Driven by quality."
+            />
             <div className="mt-6 space-y-5 text-base leading-relaxed text-muted-foreground">
               {companyStory.map((p) => (
                 <p key={p.slice(0, 24)}>{p}</p>
@@ -109,7 +124,8 @@ function HomePage() {
               to="/about"
               className="mt-8 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-xs font-bold uppercase tracking-[0.14em] hover:border-primary hover:text-primary-dark"
             >
-              Learn More About Us <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Learn More About Us{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
           <img
@@ -135,7 +151,9 @@ function HomePage() {
             ))}
           </div>
           <div className="mt-10">
-            <SecondaryButton to="/services">Explore All Services</SecondaryButton>
+            <SecondaryButton to="/services">
+              Explore All Services
+            </SecondaryButton>
           </div>
         </div>
       </section>
@@ -156,7 +174,12 @@ function HomePage() {
         </div>
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {featuredProjects.map((p, i) => (
-            <ProjectCard key={p.slug} project={p} onSelect={setActive} priority={i < 3} />
+            <ProjectCard
+              key={p.slug}
+              project={p}
+              onSelect={setActive}
+              priority={i < 3}
+            />
           ))}
         </div>
       </section>
@@ -171,7 +194,10 @@ function HomePage() {
         />
         <ul className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {industries.map((industry) => (
-            <li key={industry} className="bg-background px-6 py-7 font-display text-lg font-bold">
+            <li
+              key={industry}
+              className="bg-background px-6 py-7 font-display text-lg font-bold"
+            >
               {industry}
             </li>
           ))}
@@ -192,7 +218,8 @@ function HomePage() {
               hash="structure"
               className="mt-6 inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-xs font-bold uppercase tracking-[0.14em] hover:border-primary hover:text-primary-dark"
             >
-              View Our Company Structure <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              View Our Company Structure{" "}
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
         </div>
@@ -205,11 +232,16 @@ function HomePage() {
             to="/gallery"
             className="inline-flex items-center gap-2 border-b border-foreground/30 pb-1 text-xs font-bold uppercase tracking-[0.14em] hover:border-primary hover:text-primary-dark"
           >
-            View Full Gallery <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            View Full Gallery{" "}
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
           </Link>
         </div>
         <div className="mt-12">
-          <GalleryGrid images={featuredGallery} onSelect={setLightbox} eagerCount={0} />
+          <GalleryGrid
+            images={featuredGallery}
+            onSelect={setLightbox}
+            eagerCount={0}
+          />
         </div>
       </section>
 
@@ -238,7 +270,9 @@ function HomePage() {
           >
             <p className="eyebrow">{active.status}</p>
             <h2 className="mt-2 text-2xl">{active.title}</h2>
-            <p className="mt-3 text-sm text-muted-foreground">{active.summary}</p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              {active.summary}
+            </p>
             <p className="mt-4 text-xs uppercase tracking-[0.14em] text-primary-dark">
               {active.category.join(" · ")} — {active.location}
             </p>

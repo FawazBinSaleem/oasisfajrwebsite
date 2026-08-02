@@ -14,7 +14,8 @@ const projectTypes = [
 
 const field =
   "mt-2 w-full border border-border bg-card px-3 py-2.5 text-base text-foreground placeholder:text-muted-foreground/70 focus:border-primary-dark";
-const labelClass = "block text-[0.7rem] font-bold uppercase tracking-[0.16em] text-muted-foreground";
+const labelClass =
+  "block text-[0.7rem] font-bold uppercase tracking-[0.16em] text-muted-foreground";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -42,11 +43,14 @@ export function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="border border-border bg-card p-6 lg:p-8">
+    <form
+      onSubmit={handleSubmit}
+      className="border border-border bg-card p-6 lg:p-8"
+    >
       <h2 className="text-2xl">Send us your requirements</h2>
       <p className="mt-2 text-sm text-muted-foreground">
-        Complete the details below and your email application will open with the message ready to
-        send. Nothing is stored on this website.
+        Complete the details below and your email application will open with the
+        message ready to send. Nothing is stored on this website.
       </p>
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
@@ -54,31 +58,60 @@ export function ContactForm() {
           <label className={labelClass} htmlFor="fullName">
             Full Name
           </label>
-          <input id="fullName" name="fullName" required autoComplete="name" className={field} />
+          <input
+            id="fullName"
+            name="fullName"
+            required
+            autoComplete="name"
+            className={field}
+          />
         </div>
         <div>
           <label className={labelClass} htmlFor="companyName">
             Company
           </label>
-          <input id="companyName" name="companyName" autoComplete="organization" className={field} />
+          <input
+            id="companyName"
+            name="companyName"
+            autoComplete="organization"
+            className={field}
+          />
         </div>
         <div>
           <label className={labelClass} htmlFor="email">
             Work Email
           </label>
-          <input id="email" name="email" type="email" required autoComplete="email" className={field} />
+          <input
+            id="email"
+            name="email"
+            type="email"
+            required
+            autoComplete="email"
+            className={field}
+          />
         </div>
         <div>
           <label className={labelClass} htmlFor="phone">
             Phone
           </label>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" className={field} />
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            className={field}
+          />
         </div>
         <div className="sm:col-span-2">
           <label className={labelClass} htmlFor="projectType">
             Project Type
           </label>
-          <select id="projectType" name="projectType" defaultValue="General Inquiry" className={field}>
+          <select
+            id="projectType"
+            name="projectType"
+            defaultValue="General Inquiry"
+            className={field}
+          >
             {projectTypes.map((t) => (
               <option key={t} value={t}>
                 {t}
@@ -90,7 +123,13 @@ export function ContactForm() {
           <label className={labelClass} htmlFor="message">
             Message
           </label>
-          <textarea id="message" name="message" rows={5} required className={field} />
+          <textarea
+            id="message"
+            name="message"
+            rows={5}
+            required
+            className={field}
+          />
         </div>
       </div>
 

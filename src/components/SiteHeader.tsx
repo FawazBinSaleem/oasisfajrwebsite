@@ -30,7 +30,11 @@ export function SiteHeader() {
             scrolled ? "h-14 lg:h-16" : "h-16 lg:h-20"
           }`}
         >
-          <Link to="/" className="flex items-center gap-3" aria-label={`${company.name} — home`}>
+          <Link
+            to="/"
+            className="flex items-center gap-3"
+            aria-label={`${company.name} — home`}
+          >
             <img
               src={company.logo}
               alt=""
@@ -54,7 +58,9 @@ export function SiteHeader() {
                 to={item.to}
                 activeOptions={{ exact: item.to === "/" }}
                 activeProps={{ className: "text-foreground border-primary" }}
-                inactiveProps={{ className: "text-muted-foreground border-transparent" }}
+                inactiveProps={{
+                  className: "text-muted-foreground border-transparent",
+                }}
                 className="border-b-2 px-3 py-2 text-[0.8rem] font-semibold uppercase tracking-[0.1em] transition-colors hover:text-foreground"
               >
                 {item.label}

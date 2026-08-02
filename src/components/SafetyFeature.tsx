@@ -16,9 +16,14 @@ export function SafetyFeature({ withLink = true }: { withLink?: boolean }) {
         <ul className="mt-12 grid gap-px bg-ink-foreground/15 sm:grid-cols-2 lg:grid-cols-3">
           {safetyPractices.map((p) => (
             <li key={p.title} className="bg-ink p-6 lg:p-7">
-              <ShieldCheck className="h-6 w-6 text-primary" aria-hidden="true" />
+              <ShieldCheck
+                className="h-6 w-6 text-primary"
+                aria-hidden="true"
+              />
               <h3 className="mt-4 text-lg">{p.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-ink-foreground/70">{p.body}</p>
+              <p className="mt-2 text-sm leading-relaxed text-ink-foreground/70">
+                {p.body}
+              </p>
             </li>
           ))}
         </ul>

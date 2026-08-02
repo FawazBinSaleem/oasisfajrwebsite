@@ -8,7 +8,9 @@ export function ServiceCard({ service }: { service: Service }) {
     <article className="flex h-full flex-col border border-border bg-card p-6 transition-colors duration-200 hover:border-primary lg:p-7">
       <Icon className="h-7 w-7 text-primary-dark" aria-hidden="true" />
       <h3 className="mt-5 text-xl">{service.title}</h3>
-      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{service.short}</p>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
+        {service.short}
+      </p>
       <Link
         to="/services"
         hash={service.slug}

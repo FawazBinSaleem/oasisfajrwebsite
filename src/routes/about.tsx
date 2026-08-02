@@ -60,8 +60,8 @@ function AboutPage() {
               <p key={p.slice(0, 24)}>{p}</p>
             ))}
             <p>
-              Formerly known as {company.formerNames.join(" and ")}, the company operates from{" "}
-              {company.location}.
+              Formerly known as {company.formerNames.join(" and ")}, the company
+              operates from {company.location}.
             </p>
           </div>
         </div>
@@ -70,13 +70,20 @@ function AboutPage() {
       <section className="border-y border-border bg-sand">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-2 lg:px-8 lg:py-20">
           <div>
-            <SectionHeading eyebrow="Vision" title="Our vision" intro={vision} />
+            <SectionHeading
+              eyebrow="Vision"
+              title="Our vision"
+              intro={vision}
+            />
           </div>
           <div>
             <SectionHeading eyebrow="Mission" title="Our mission" as="h2" />
             <ul className="mt-6 space-y-4">
               {missionStatements.map((m) => (
-                <li key={m.slice(0, 20)} className="border-l-2 border-primary pl-4 text-sm leading-relaxed text-muted-foreground">
+                <li
+                  key={m.slice(0, 20)}
+                  className="border-l-2 border-primary pl-4 text-sm leading-relaxed text-muted-foreground"
+                >
                   {m}
                 </li>
               ))}
@@ -91,7 +98,9 @@ function AboutPage() {
           {coreValues.map((v) => (
             <li key={v.title} className="bg-background p-6 lg:p-7">
               <h3 className="text-lg">{v.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v.body}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                {v.body}
+              </p>
             </li>
           ))}
         </ul>
@@ -125,26 +134,39 @@ function AboutPage() {
 
       <Section id="hse">
         <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-          <SectionHeading eyebrow="HSE policy" title="Health, safety and environment" />
+          <SectionHeading
+            eyebrow="HSE policy"
+            title="Health, safety and environment"
+          />
           <div className="space-y-5 text-base leading-relaxed text-muted-foreground">
             {hse.intro.map((p) => (
               <p key={p.slice(0, 24)}>{p}</p>
             ))}
             <div>
-              <h3 className="text-lg text-foreground">Reportable environmental incidents</h3>
+              <h3 className="text-lg text-foreground">
+                Reportable environmental incidents
+              </h3>
               <ul className="mt-4 grid gap-2 sm:grid-cols-2">
                 {hse.reportable.map((r) => (
-                  <li key={r} className="border border-border px-4 py-3 text-sm">
+                  <li
+                    key={r}
+                    className="border border-border px-4 py-3 text-sm"
+                  >
                     {r}
                   </li>
                 ))}
               </ul>
             </div>
             <div>
-              <h3 className="text-lg text-foreground">Environmental commitments</h3>
+              <h3 className="text-lg text-foreground">
+                Environmental commitments
+              </h3>
               <ul className="mt-4 space-y-3">
                 {hse.environment.map((e) => (
-                  <li key={e.slice(0, 20)} className="border-l-2 border-primary pl-4 text-sm leading-relaxed">
+                  <li
+                    key={e.slice(0, 20)}
+                    className="border-l-2 border-primary pl-4 text-sm leading-relaxed"
+                  >
                     {e}
                   </li>
                 ))}
@@ -156,10 +178,17 @@ function AboutPage() {
 
       <section className="border-t border-border bg-sand" id="quality">
         <div className="mx-auto grid max-w-7xl gap-10 px-5 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:px-8 lg:py-20">
-          <SectionHeading eyebrow="Quality policy" title="Our commitment to quality" intro={quality.intro} />
+          <SectionHeading
+            eyebrow="Quality policy"
+            title="Our commitment to quality"
+            intro={quality.intro}
+          />
           <ul className="space-y-4">
             {quality.points.map((p) => (
-              <li key={p.slice(0, 20)} className="border border-border bg-background p-5 text-sm leading-relaxed text-muted-foreground">
+              <li
+                key={p.slice(0, 20)}
+                className="border border-border bg-background p-5 text-sm leading-relaxed text-muted-foreground"
+              >
                 {p}
               </li>
             ))}
@@ -167,7 +196,10 @@ function AboutPage() {
         </div>
       </section>
 
-      <ContactCTA title="Want the full company profile?" body="Get in touch and we will share credentials, capability statements and project references relevant to your scope." />
+      <ContactCTA
+        title="Want the full company profile?"
+        body="Get in touch and we will share credentials, capability statements and project references relevant to your scope."
+      />
     </>
   );
 }

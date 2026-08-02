@@ -89,7 +89,9 @@ export function GalleryLightbox({
         </button>
       </div>
 
-      <p className="pb-1 text-center text-sm text-ink-foreground/80">{image.caption}</p>
+      <p className="pb-1 text-center text-sm text-ink-foreground/80">
+        {image.caption}
+      </p>
     </div>
   );
 }

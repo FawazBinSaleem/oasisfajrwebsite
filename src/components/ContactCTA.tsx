@@ -17,8 +17,13 @@ export function ContactCTA({
         </div>
         <div className="flex flex-wrap gap-3">
           <PrimaryButton to="/contact">Request a Consultation</PrimaryButton>
-          <SecondaryButton href={company.whatsapp} target="_blank" rel="noreferrer" onDark>
-            WhatsApp Us
+          <SecondaryButton
+            href={company.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            onDark
+          >
+            Contact on WhatsAPP
           </SecondaryButton>
         </div>
       </div>

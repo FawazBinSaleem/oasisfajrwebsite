@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { ContactCTA } from "@/components/ContactCTA";
 import { services } from "@/data/services";
 import { company, industries } from "@/data/company";
+import { MaintenanceSupport } from "@/components/MaintenceSupport";
 
 const title = "Contracting Services | Civil, MEP, Fit-Out & Maintenance";
 const description =
@@ -65,7 +66,10 @@ function ServicesPage() {
           >
             <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 lg:grid-cols-2 lg:gap-16 lg:px-8 lg:py-20">
               <div className={reversed ? "lg:order-2" : ""}>
-                <Icon className="h-9 w-9 text-primary-dark" aria-hidden="true" />
+                <Icon
+                  className="h-9 w-9 text-primary-dark"
+                  aria-hidden="true"
+                />
                 <SectionHeading
                   eyebrow={`0${index + 1}`}
                   title={service.title}
@@ -103,13 +107,18 @@ function ServicesPage() {
           />
           <ul className="mt-10 grid gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {industries.map((industry) => (
-              <li key={industry} className="bg-background px-6 py-7 font-display text-lg font-bold">
+              <li
+                key={industry}
+                className="bg-background px-6 py-7 font-display text-lg font-bold"
+              >
                 {industry}
               </li>
             ))}
           </ul>
         </div>
       </section>
+
+      <MaintenanceSupport />
 
       <ContactCTA
         title="Need a scope priced?"
