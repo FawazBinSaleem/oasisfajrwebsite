@@ -41,9 +41,9 @@ jobs:
           find .output/public -maxdepth 3 -type f | sort
 
       - name: Inspect build output
-  run: |
-    echo "Output directory:"
-    find .output -maxdepth 4 -type f | sort || true
+        run: |
+        echo "Output directory:"
+        find .output -maxdepth 4 -type f | sort || true
 
       
 
