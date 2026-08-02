@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -36,21 +35,22 @@ jobs:
       - name: Build and prerender website
         run: npm run build
 
+      - name: Show generated files
+        run: |
+          echo "Generated files:"
+          find .output/public -maxdepth 3 -type f | sort
+
       - name: Verify static output
         run: |
-          test -f dist/client/index.html
-          test -f dist/client/company/index.html
-          test -f dist/client/contact/index.html
-          test -f dist/client/gallery/index.html
-          test -f dist/client/introduction/index.html
-          test -f dist/client/organization/index.html
-          test -f dist/client/projects/index.html
-          test -f dist/client/safety/index.html
-          test -f dist/client/specialization/index.html
-          test -f dist/client/vision/index.html
+          test -f .output/public/index.html
+          test -f .output/public/about/index.html
+          test -f .output/public/services/index.html
+          test -f .output/public/projects/index.html
+          test -f .output/public/gallery/index.html
+          test -f .output/public/contact/index.html
 
-      - name: Add GitHub Pages 404 fallback
-        run: cp dist/client/index.html dist/client/404.html
+      - name: Add GitHub Pages fallback
+        run: cp .output/public/index.html .output/public/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -58,7 +58,7 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist/client
+          path: .output/public
 
   deploy:
     environment:
