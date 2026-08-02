@@ -42,10 +42,8 @@ jobs:
 
       - name: Inspect build output
         run: |
-        echo "Output directory:"
-        find .output -maxdepth 4 -type f | sort || true
-
-      
+          echo "Output directory:"
+          find .output -maxdepth 4 -type f | sort || true
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
