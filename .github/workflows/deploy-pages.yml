@@ -35,15 +35,24 @@ jobs:
       - name: Build and prerender website
         run: npm run build
 
-      - name: Show generated files
+      - name: Inspect generated output
         run: |
-          echo "Generated files:"
-          find .output/public -maxdepth 3 -type f | sort
+          echo "All generated HTML files:"
+          find .output dist -type f -name "*.html" 2>/dev/null || true
 
-      - name: Inspect build output
+          echo ".output/public contents:"
+          find .output/public -maxdepth 4 -type f | sort || true
+
+      - name: Verify homepage exists
         run: |
-          echo "Output directory:"
-          find .output -maxdepth 4 -type f | sort || true
+          if [ ! -f ".output/public/index.html" ]; then
+            echo "ERROR: .output/public/index.html was not generated."
+            echo "The TanStack prerender configuration must be fixed before deployment."
+            exit 1
+          fi
+
+      - name: Add GitHub Pages fallback
+        run: cp .output/public/index.html .output/public/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
