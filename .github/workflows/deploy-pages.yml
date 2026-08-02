@@ -40,8 +40,12 @@ jobs:
           echo "Generated files:"
           find .output/public -maxdepth 3 -type f | sort
 
-      - name: Add GitHub Pages fallback
-        run: cp .output/public/index.html .output/public/404.html
+      - name: Inspect build output
+  run: |
+    echo "Output directory:"
+    find .output -maxdepth 4 -type f | sort || true
+
+      
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
