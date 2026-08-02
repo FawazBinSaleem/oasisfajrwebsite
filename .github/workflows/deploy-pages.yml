@@ -35,24 +35,46 @@ jobs:
       - name: Build and prerender website
         run: npm run build
 
-      - name: Inspect generated output
+      - name: Inspect build output
         run: |
-          echo "All generated HTML files:"
-          find .output dist -type f -name "*.html" 2>/dev/null || true
+          echo "Generated HTML files:"
+          find dist .output -type f -name "*.html" 2>/dev/null || true
 
-          echo ".output/public contents:"
-          find .output/public -maxdepth 4 -type f | sort || true
+          echo "dist contents:"
+          find dist -maxdepth 4 -type f 2>/dev/null | sort || true
 
-      - name: Verify homepage exists
+          echo ".output contents:"
+          find .output -maxdepth 4 -type f 2>/dev/null | sort || true
+
+      - name: Prepare GitHub Pages files
         run: |
-          if [ ! -f ".output/public/index.html" ]; then
-            echo "ERROR: .output/public/index.html was not generated."
-            echo "The TanStack prerender configuration must be fixed before deployment."
+          rm -rf pages-dist
+          mkdir -p pages-dist
+
+          if [ -f "dist/client/index.html" ]; then
+            echo "Using dist/client"
+            cp -R dist/client/. pages-dist/
+
+          elif [ -f ".output/public/index.html" ]; then
+            echo "Using .output/public"
+            cp -R .output/public/. pages-dist/
+
+          else
+            echo "ERROR: No static index.html was generated."
+            echo "HTML files found:"
+            find dist .output -type f -name "*.html" 2>/dev/null || true
             exit 1
           fi
 
+      - name: Verify pages
+        run: |
+          test -f pages-dist/index.html
+
+          echo "Prepared Pages files:"
+          find pages-dist -maxdepth 3 -type f | sort
+
       - name: Add GitHub Pages fallback
-        run: cp .output/public/index.html .output/public/404.html
+        run: cp pages-dist/index.html pages-dist/404.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
@@ -60,15 +82,15 @@ jobs:
       - name: Upload GitHub Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .output/public
+          path: pages-dist
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
-    needs: build
-    runs-on: ubuntu-latest
 
     steps:
       - name: Deploy GitHub Pages
