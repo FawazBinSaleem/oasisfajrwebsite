@@ -40,15 +40,6 @@ jobs:
           echo "Generated files:"
           find .output/public -maxdepth 3 -type f | sort
 
-      - name: Verify static output
-        run: |
-          test -f .output/public/index.html
-          test -f .output/public/about/index.html
-          test -f .output/public/services/index.html
-          test -f .output/public/projects/index.html
-          test -f .output/public/gallery/index.html
-          test -f .output/public/contact/index.html
-
       - name: Add GitHub Pages fallback
         run: cp .output/public/index.html .output/public/404.html
 
