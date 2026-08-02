@@ -1,42 +1,28 @@
-# Oasis Fajr Website
+# Oasis Fajr Renewal
 
-A React + TypeScript website built with TanStack Start, Vite, Tailwind CSS, and the Lovable TanStack configuration.
+https://github.com/FawazBinSaleem/oasisfajrwebsite
 
-## Local development
+I wanna refactor this site with reaxt and new ui which makes its modern, all the information is in the github, I dont want any of the information to change, maybe it can be like reworded to make sense for a website but yeah
 
-```bash
-npm install
+https://oasisfajircontracting.com/
+
+This project was built with [Lovable](https://lovable.dev).
+
+## Build with Lovable
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/6dec6250-66be-4c72-8b21-a33902c22013).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+
+## Development
+
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
 npm run dev
 ```
-
-## Checks
-
-```bash
-npm run typecheck
-npm run lint
-npm run build
-```
-
-## Static GitHub Pages deployment
-
-The project is configured to prerender all static routes into `.output/public`. The workflow at `.github/workflows/deploy-pages.yml` builds and deploys that directory whenever `main` is updated.
-
-In GitHub, open **Settings → Pages** and set **Source** to **GitHub Actions**. Keep the custom domain set to:
-
-```text
-oasisfajircontracting.com
-```
-
-The site contains no runtime server functions, so the prerendered output can be hosted as a static site. The custom `src/server.ts` file remains because Lovable's build process uses it while prerendering.
-
-## Static assets
-
-All images and other public files belong in `public/`. They are referenced from the site with root paths, for example:
-
-```tsx
-<img src="/media/oasisfajr.webp" alt="Oasis Fajr Contracting logo" />
-```
-
-## Generated files
-
-Do not edit `src/routeTree.gen.ts` manually. TanStack Router regenerates it from the route files in `src/routes/`.

@@ -8,7 +8,7 @@ export const company = {
   operationManager: "Saleem Ahmed",
   generalManager: "Mohammad Abu Khalid",
   phone: "+966551908980",
-  email: "siaksa@oasisfajircontracting.com",
+  email: "siaksa.sa@gmail.com",
   tagline: "Dream it and we build it.",
 };
 

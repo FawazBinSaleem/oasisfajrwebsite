@@ -1,80 +1,81 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { X } from "lucide-react";
-import { PageHeader, Section } from "@/components/PageHeader";
-import { galleryImages } from "@/data/site";
+import { useMemo, useState } from "react";
+import { PageHero, Section } from "@/components/PageHero";
+import { GalleryGrid } from "@/components/GalleryGrid";
+import { GalleryLightbox } from "@/components/GalleryLightbox";
+import { ProjectFilter } from "@/components/ProjectFilter";
+import { ContactCTA } from "@/components/ContactCTA";
+import { galleryImages, galleryCategories } from "@/data/gallery";
+import type { GalleryCategory } from "@/data/gallery";
+import { company } from "@/data/company";
+
+const title = "Project Gallery | Oasis Fajr Contracting";
+const description =
+  "Photographs from Oasis Fajr construction, mechanical, electrical, fit-out and landscaping sites across Saudi Arabia.";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery | Oasis Fajr Contracting" },
-      {
-        name: "description",
-        content:
-          "Photographs from Oasis Fajr Contracting sites: concrete, steel, fit out, gypsum, MEP and landscaping works.",
-      },
-      { property: "og:title", content: "Gallery | Oasis Fajr Contracting" },
-      { property: "og:description", content: "Photographs from Oasis Fajr Contracting sites." },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: "/gallery" },
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: `${company.domain}/gallery` },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Gallery | Oasis Fajr Contracting" },
-      {
-        name: "twitter:description",
-        content: "Photographs from Oasis Fajr Contracting sites.",
-      },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
     ],
-    links: [{ rel: "canonical", href: "/gallery" }],
+    links: [{ rel: "canonical", href: `${company.domain}/gallery` }],
   }),
-  component: Gallery,
+  component: GalleryPage,
 });
 
-function Gallery() {
-  const [active, setActive] = useState<string | null>(null);
+function GalleryPage() {
+  const [category, setCategory] = useState<GalleryCategory | "All">("All");
+  const [index, setIndex] = useState<number | null>(null);
+
+  const images = useMemo(
+    () =>
+      category === "All"
+        ? galleryImages
+        : galleryImages.filter((i) => i.categories.includes(category)),
+    [category],
+  );
 
   return (
     <>
-      <PageHeader
-        eyebrow="On site"
-        title="Photo Gallery"
-        intro="A look at our works in progress and completed across the Kingdom."
+      <PageHero
+        eyebrow="Gallery"
+        title="Site photography"
+        intro="A visual record of works in progress and completed scopes from our projects across the Kingdom."
       />
+      <div id="main-content" />
+
       <Section>
-        <div className="columns-2 gap-3 md:columns-3 lg:columns-4">
-          {galleryImages.map((src, i) => (
-            <button
-              key={src}
-              type="button"
-              onClick={() => setActive(src)}
-              className="mb-3 block w-full overflow-hidden bg-muted"
-            >
-              <img
-                src={src}
-                alt={`Oasis Fajr project photo ${i + 1}`}
-                loading="lazy"
-                className="w-full transition-transform duration-500 hover:scale-105"
-              />
-            </button>
-          ))}
+        <ProjectFilter
+          label="Filter gallery by category"
+          options={galleryCategories}
+          active={category}
+          onChange={setCategory}
+        />
+        <p role="status" className="mt-6 text-sm text-muted-foreground">
+          Showing {images.length} of {galleryImages.length} photographs
+        </p>
+        <div className="mt-8">
+          <GalleryGrid images={images} onSelect={setIndex} />
         </div>
       </Section>
 
-      {active && (
-        <div
-          className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/90 p-4"
-          onClick={() => setActive(null)}
-          role="presentation"
-        >
-          <button
-            type="button"
-            aria-label="Close image"
-            className="absolute right-5 top-5 text-ink-foreground"
-            onClick={() => setActive(null)}
-          >
-            <X className="h-7 w-7" />
-          </button>
-          <img src={active} alt="Enlarged project photo" className="max-h-[88vh] max-w-full" />
-        </div>
+      <ContactCTA />
+
+      {index !== null && (
+        <GalleryLightbox
+          images={images}
+          index={index}
+          onIndexChange={setIndex}
+          onClose={() => setIndex(null)}
+        />
       )}
     </>
   );

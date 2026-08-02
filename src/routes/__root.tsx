@@ -80,13 +80,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Oasis Fajr Contracting & Trading" },
+      { title: "Oasis Fajr Contracting" },
       {
         name: "description",
         content:
-          "Oasis Fajr Contracting & Trading — civil, MEP, fit out and landscaping contractor in Saudi Arabia since 2001.",
+          "Oasis Fajr Contracting — civil, MEP, fit out and landscaping contractor in Saudi Arabia since 2001.",
       },
-      { name: "author", content: "Oasis Fajr Contracting & Trading" },
+      { name: "author", content: "Oasis Fajr Contracting" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

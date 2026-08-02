@@ -10,24 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
-import { Route as CompanyRouteImport } from './routes/company'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as IntroductionRouteImport } from './routes/introduction'
-import { Route as OrganizationRouteImport } from './routes/organization'
 import { Route as ProjectsRouteImport } from './routes/projects'
-import { Route as SafetyRouteImport } from './routes/safety'
-import { Route as SpecializationRouteImport } from './routes/specialization'
-import { Route as VisionRouteImport } from './routes/vision'
+import { Route as ServicesRouteImport } from './routes/services'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CompanyRoute = CompanyRouteImport.update({
-  id: '/company',
-  path: '/company',
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -40,124 +36,65 @@ const GalleryRoute = GalleryRouteImport.update({
   path: '/gallery',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IntroductionRoute = IntroductionRouteImport.update({
-  id: '/introduction',
-  path: '/introduction',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const OrganizationRoute = OrganizationRouteImport.update({
-  id: '/organization',
-  path: '/organization',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const ProjectsRoute = ProjectsRouteImport.update({
   id: '/projects',
   path: '/projects',
   getParentRoute: () => rootRouteImport,
 } as any)
-const SafetyRoute = SafetyRouteImport.update({
-  id: '/safety',
-  path: '/safety',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const SpecializationRoute = SpecializationRouteImport.update({
-  id: '/specialization',
-  path: '/specialization',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const VisionRoute = VisionRouteImport.update({
-  id: '/vision',
-  path: '/vision',
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
-  '/company': typeof CompanyRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/introduction': typeof IntroductionRoute
-  '/organization': typeof OrganizationRoute
   '/projects': typeof ProjectsRoute
-  '/safety': typeof SafetyRoute
-  '/specialization': typeof SpecializationRoute
-  '/vision': typeof VisionRoute
+  '/services': typeof ServicesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
-  '/company': typeof CompanyRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/introduction': typeof IntroductionRoute
-  '/organization': typeof OrganizationRoute
   '/projects': typeof ProjectsRoute
-  '/safety': typeof SafetyRoute
-  '/specialization': typeof SpecializationRoute
-  '/vision': typeof VisionRoute
+  '/services': typeof ServicesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
-  '/company': typeof CompanyRoute
+  '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
-  '/introduction': typeof IntroductionRoute
-  '/organization': typeof OrganizationRoute
   '/projects': typeof ProjectsRoute
-  '/safety': typeof SafetyRoute
-  '/specialization': typeof SpecializationRoute
-  '/vision': typeof VisionRoute
+  '/services': typeof ServicesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    | '/'
-    | '/company'
-    | '/contact'
-    | '/gallery'
-    | '/introduction'
-    | '/organization'
-    | '/projects'
-    | '/safety'
-    | '/specialization'
-    | '/vision'
+    '/' | '/about' | '/contact' | '/gallery' | '/projects' | '/services'
   fileRoutesByTo: FileRoutesByTo
-  to:
-    | '/'
-    | '/company'
-    | '/contact'
-    | '/gallery'
-    | '/introduction'
-    | '/organization'
-    | '/projects'
-    | '/safety'
-    | '/specialization'
-    | '/vision'
+  to: '/' | '/about' | '/contact' | '/gallery' | '/projects' | '/services'
   id:
     | '__root__'
     | '/'
-    | '/company'
+    | '/about'
     | '/contact'
     | '/gallery'
-    | '/introduction'
-    | '/organization'
     | '/projects'
-    | '/safety'
-    | '/specialization'
-    | '/vision'
+    | '/services'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
-  CompanyRoute: typeof CompanyRoute
+  AboutRoute: typeof AboutRoute
   ContactRoute: typeof ContactRoute
   GalleryRoute: typeof GalleryRoute
-  IntroductionRoute: typeof IntroductionRoute
-  OrganizationRoute: typeof OrganizationRoute
   ProjectsRoute: typeof ProjectsRoute
-  SafetyRoute: typeof SafetyRoute
-  SpecializationRoute: typeof SpecializationRoute
-  VisionRoute: typeof VisionRoute
+  ServicesRoute: typeof ServicesRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -169,11 +106,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/company': {
-      id: '/company'
-      path: '/company'
-      fullPath: '/company'
-      preLoaderRoute: typeof CompanyRouteImport
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -190,20 +127,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleryRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/introduction': {
-      id: '/introduction'
-      path: '/introduction'
-      fullPath: '/introduction'
-      preLoaderRoute: typeof IntroductionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/organization': {
-      id: '/organization'
-      path: '/organization'
-      fullPath: '/organization'
-      preLoaderRoute: typeof OrganizationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/projects': {
       id: '/projects'
       path: '/projects'
@@ -211,25 +134,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/safety': {
-      id: '/safety'
-      path: '/safety'
-      fullPath: '/safety'
-      preLoaderRoute: typeof SafetyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/specialization': {
-      id: '/specialization'
-      path: '/specialization'
-      fullPath: '/specialization'
-      preLoaderRoute: typeof SpecializationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/vision': {
-      id: '/vision'
-      path: '/vision'
-      fullPath: '/vision'
-      preLoaderRoute: typeof VisionRouteImport
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -237,15 +146,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
-  CompanyRoute: CompanyRoute,
+  AboutRoute: AboutRoute,
   ContactRoute: ContactRoute,
   GalleryRoute: GalleryRoute,
-  IntroductionRoute: IntroductionRoute,
-  OrganizationRoute: OrganizationRoute,
   ProjectsRoute: ProjectsRoute,
-  SafetyRoute: SafetyRoute,
-  SpecializationRoute: SpecializationRoute,
-  VisionRoute: VisionRoute,
+  ServicesRoute: ServicesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
