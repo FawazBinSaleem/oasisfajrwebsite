@@ -1,5 +1,6 @@
 import { company } from "@/data/company";
-import { PrimaryButton, SecondaryButton } from "./Buttons";
+import { PrimaryButton, WhatsAppButton } from "./Buttons";
+import { MessageCircle } from "lucide-react";
 
 export function ContactCTA({
   title = "Planning your next project?",
@@ -17,14 +18,15 @@ export function ContactCTA({
         </div>
         <div className="flex flex-wrap gap-3">
           <PrimaryButton to="/contact">Request a Consultation</PrimaryButton>
-          <SecondaryButton
+          <WhatsAppButton
             href={company.whatsapp}
             target="_blank"
-            rel="noreferrer"
-            onDark
+            rel="noopener noreferrer"
+            aria-label={`Contact ${company.short} on WhatsApp`}
           >
-            Contact on WhatsAPP
-          </SecondaryButton>
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            Chat on WhatsApp
+          </WhatsAppButton>
         </div>
       </div>
     </section>

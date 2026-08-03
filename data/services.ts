@@ -1,5 +1,12 @@
 import type { LucideIcon } from "lucide-react";
-import { Building2, Wrench, Zap, PanelsTopLeft, Settings, Trees } from "lucide-react";
+import {
+  Building2,
+  Wrench,
+  Zap,
+  PanelsTopLeft,
+  Settings,
+  Trees,
+} from "lucide-react";
 
 export type Service = {
   slug: string;
@@ -36,7 +43,8 @@ export const services: Service[] = [
     slug: "mechanical-works",
     title: "Mechanical Works",
     icon: Wrench,
-    short: "HVAC, plumbing, firefighting, equipment installation, and mechanical maintenance.",
+    short:
+      "HVAC, plumbing, firefighting, equipment installation, and mechanical maintenance.",
     overview:
       "Our mechanical teams handle HVAC, plumbing, firefighting and gas networks, water supply and drainage systems, pump and equipment installation, and ongoing mechanical maintenance for residential, commercial and industrial buildings.",
     scope: [
@@ -54,7 +62,8 @@ export const services: Service[] = [
     slug: "electrical-works",
     title: "Electrical Works",
     icon: Zap,
-    short: "Power distribution, lighting, low-current systems, installation, testing, and maintenance.",
+    short:
+      "Power distribution, lighting, low-current systems, installation, testing, and maintenance.",
     overview:
       "We deliver electrical design and installation to local regulations: distribution boards and panels, cabling and cable trays, lighting, small power and ELV, grounding and earthing, plus fire alarm installation, operation and maintenance according to NFPA and Saudi Civil Defense requirements.",
     scope: [
@@ -72,7 +81,8 @@ export const services: Service[] = [
     slug: "interior-fit-out",
     title: "Interior Fit-Out",
     icon: PanelsTopLeft,
-    short: "Partitions, ceilings, flooring, decoration, finishes, and turnkey commercial interiors.",
+    short:
+      "Partitions, ceilings, flooring, decoration, finishes, and turnkey commercial interiors.",
     overview:
       "Our fit-out teams deliver branded outlets, offices, clinics and retail interiors — from drywall partitions and gypsum ceilings through flooring, joinery and decorative finishes — as complete turnkey packages where required.",
     scope: [
@@ -90,7 +100,8 @@ export const services: Service[] = [
     slug: "maintenance",
     title: "Maintenance",
     icon: Settings,
-    short: "Preventive and corrective maintenance supporting reliable facility operations.",
+    short:
+      "Preventive and corrective maintenance supporting reliable facility operations.",
     overview:
       "We support operating facilities with planned and reactive maintenance across building fabric, mechanical and electrical systems, including inspection, repair and signage upkeep.",
     scope: [
@@ -108,7 +119,8 @@ export const services: Service[] = [
     slug: "landscaping",
     title: "Landscaping",
     icon: Trees,
-    short: "Hardscape, softscape, irrigation, exterior improvements, and site beautification.",
+    short:
+      "Hardscape, softscape, irrigation, exterior improvements, and site beautification.",
     overview:
       "Hard and soft landscaping is an integral part of any project. We design and execute irrigation and water networks, walkways, interlock and curb stone works, planting and external site improvements.",
     scope: [
@@ -124,4 +136,5 @@ export const services: Service[] = [
   },
 ];
 
-export const serviceBySlug = (slug: string) => services.find((s) => s.slug === slug);
+export const serviceBySlug = (slug: string) =>
+  services.find((s) => s.slug === slug);

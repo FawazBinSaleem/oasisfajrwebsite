@@ -9,18 +9,7 @@ export function ContactDetails() {
       value: company.operationManager,
       href: undefined,
     },
-    {
-      icon: MessageCircle,
-      label: "WhatsApp",
-      value: company.phoneDisplay,
-      href: company.whatsapp,
-    },
-    {
-      icon: Mail,
-      label: "Email",
-      value: company.email,
-      href: `mailto:${company.email}`,
-    },
+
     {
       icon: MapPin,
       label: "Location",

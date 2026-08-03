@@ -62,12 +62,30 @@ export const missionStatements = [
 ];
 
 export const coreValues = [
-  { title: "Integrity", body: "We commit to what we can deliver, and we report progress honestly." },
-  { title: "Quality", body: "Workmanship is checked against approved materials, drawings and specifications." },
-  { title: "Safety", body: "Job safety analysis precedes every activity, and any worker may stop unsafe work." },
-  { title: "Reliability", body: "Programmes, inspections and handovers are planned and tracked, not improvised." },
-  { title: "Accountability", body: "Every discipline has a named owner from mobilisation through final handover." },
-  { title: "Client Focus", body: "We work to the client's technical, budget and time requirements." },
+  {
+    title: "Integrity",
+    body: "We commit to what we can deliver, and we report progress honestly.",
+  },
+  {
+    title: "Quality",
+    body: "Workmanship is checked against approved materials, drawings and specifications.",
+  },
+  {
+    title: "Safety",
+    body: "Job safety analysis precedes every activity, and any worker may stop unsafe work.",
+  },
+  {
+    title: "Reliability",
+    body: "Programmes, inspections and handovers are planned and tracked, not improvised.",
+  },
+  {
+    title: "Accountability",
+    body: "Every discipline has a named owner from mobilisation through final handover.",
+  },
+  {
+    title: "Client Focus",
+    body: "We work to the client's technical, budget and time requirements.",
+  },
 ];
 
 export const safetyStatement =
@@ -135,12 +153,30 @@ export const quality = {
 };
 
 export const organization = [
-  { level: "General Management", body: "Overall direction, commercial responsibility and client relationships." },
-  { level: "Operations", body: "Mobilisation, resourcing, procurement and coordination between disciplines." },
-  { level: "Project Management", body: "Programme, cost control, reporting and client communication per project." },
-  { level: "Engineering", body: "Drawings, material submittals, method statements and technical coordination." },
-  { level: "Safety & Quality", body: "HSE supervision, job safety analysis, inspections and handover records." },
-  { level: "Site Teams", body: "Civil, mechanical, electrical, fit-out and landscaping crews executing the works." },
+  {
+    level: "General Management",
+    body: "Overall direction, commercial responsibility and client relationships.",
+  },
+  {
+    level: "Operations",
+    body: "Mobilisation, resourcing, procurement and coordination between disciplines.",
+  },
+  {
+    level: "Project Management",
+    body: "Programme, cost control, reporting and client communication per project.",
+  },
+  {
+    level: "Engineering",
+    body: "Drawings, material submittals, method statements and technical coordination.",
+  },
+  {
+    level: "Safety & Quality",
+    body: "HSE supervision, job safety analysis, inspections and handover records.",
+  },
+  {
+    level: "Site Teams",
+    body: "Civil, mechanical, electrical, fit-out and landscaping crews executing the works.",
+  },
 ];
 
 export const management = [

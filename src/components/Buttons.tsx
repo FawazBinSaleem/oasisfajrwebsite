@@ -76,3 +76,12 @@ export function SecondaryButton(props: BaseProps & { onDark?: boolean }) {
     <Shell {...props} className={`${base} ${tone} ${props.className ?? ""}`} />
   );
 }
+
+export function WhatsAppButton(props: BaseProps) {
+  return (
+    <Shell
+      {...props}
+      className={`${base} bg-[#25D366] text-white hover:bg-[#1ebe5d] hover:text-white ${props.className ?? ""}`}
+    />
+  );
+}

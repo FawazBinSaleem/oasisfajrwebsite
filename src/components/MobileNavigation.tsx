@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
-import { X } from "lucide-react";
+import { X, MessageCircle } from "lucide-react";
 import { mainNav } from "@/data/navigation";
 import { company } from "@/data/company";
 
@@ -69,20 +69,15 @@ export function MobileNavigation({
       </nav>
 
       <div className="border-t border-ink-foreground/15 p-5">
-        <Link
-          to="/contact"
-          onClick={onClose}
-          className="flex w-full items-center justify-center bg-primary px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-primary-foreground"
-        >
-          Request a Consultation
-        </Link>
         <a
           href={company.whatsapp}
           target="_blank"
-          rel="noreferrer"
-          className="mt-3 block text-center text-sm text-ink-foreground/70"
+          rel="noopener noreferrer"
+          className=" flex w-full items-center justify-center gap-2 bg-[#25D366] px-6 py-3.5 text-xs font-bold uppercase tracking-[0.16em] text-white transition-colors hover:bg-[#1ebe5d]"
+          aria-label={`Contact ${company.short} on WhatsApp`}
         >
-          {company.phoneDisplay}
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
+          Chat on WhatsApp
         </a>
       </div>
     </div>
